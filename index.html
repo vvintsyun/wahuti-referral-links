@@ -64,24 +64,31 @@
     .link-btn:hover {
         background: #0056b3;
     }
+    #downloadSection {
+        display: none;
+        margin-top: 20px;
+    }
 </style>
 </head>
 <body>
 
 <img src="wahuti-logo.png" alt="Watch Humans Try It Logo" class="logo">
     
-<h1>Hey! I signed up to review cool new products on camera with this app called <b>Watch Humans Try It</b>, and you can try it too!</h1>
-<p>Make sure to use my unique referral code when you sign up:</p>
+<h1>Step 1: Copy my referral code</h1>
+<p>Sign up to review cool new products on camera with <b>Watch Humans Try It</b> and earn rewards.  
+Use my unique code during registration:</p>
 
 <div class="code-box">
-    <span class="code-text" id="refCode">6CBJRS</span>
-    <button onclick="copyCode()">Copy</button>
+    <span class="code-text" id="refCode">mycode</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 </div>
-
-<h2>Download the app here</h2>
-<a href="https://apps.apple.com/gb/app/watch-humans-try-it/id6473253598" target="_blank">iOS</a>
-</br>
-<a href="https://play.google.com/store/apps/details?id=com.reallygoodculture.rgcvideoreviewsv2" target="_blank">Android</a>
+<div id="downloadSection">
+    <h1>Step 2: Download the app</h1>
+    <p>Now that you have the code, choose your platform:</p>
+    <a href="https://apps.apple.com/gb/app/watch-humans-try-it/id6473253598" target="_blank">iOS</a>
+    </br>
+    <a href="https://play.google.com/store/apps/details?id=com.reallygoodculture.rgcvideoreviewsv2" target="_blank">Android</a>
+</div>
 
 <script>
 function copyCode(button) {
@@ -89,6 +96,7 @@ function copyCode(button) {
     navigator.clipboard.writeText(code).then(() => {
         button.textContent = "Copied!";
         button.classList.add("copied");
+        document.getElementById("downloadSection").style.display = "block";
         setTimeout(() => {
             button.textContent = "Copy";
             button.classList.remove("copied");
