@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch Humans Try It</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        background: #f9f9f9;
+        color: #333;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .code-box {
+        display: inline-flex;
+        align-items: center;
+        background: #eee;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    .code-text {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    button {
+        padding: 8px 12px;
+        background: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #45a049;
+    }
+    a {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        background: #007BFF;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+    a:hover {
+        background: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<h1>Hey! I signed up to review cool new products on camera with this app called <b>Watch Humans Try It</b>, and you can try it too!</h1>
+<p>Make sure to use my unique referral code when you sign up:</p>
+
+<div class="code-box">
+    <span class="code-text" id="refCode">6CBJRS</span>
+    <button onclick="copyCode()">Copy</button>
+</div>
+
+<h2>Download the app here</h2>
+<a href="https://apps.apple.com/gb/app/watch-humans-try-it/id6473253598" target="_blank">iOS</a>
+<a href="https://play.google.com/store/apps/details?id=com.reallygoodculture.rgcvideoreviewsv2" target="_blank">Android</a>
+
+<script>
+function copyCode() {
+    const code = document.getElementById("refCode").textContent;
+    navigator.clipboard.writeText(code).then(() => {
+        alert("Code copied: " + code);
+    }).catch(err => {
+        console.error("Failed to copy text: ", err);
+    });
+}
+</script>
+
+</body>
+</html>
+
